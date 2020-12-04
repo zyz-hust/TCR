@@ -6,7 +6,7 @@
 ![RNA-seq AUC](https://github.com/zyz-hust/zhaozy.github.io/blob/gh-pages/images/auc.png)
 ![RNA-seq boxplot](https://github.com/zyz-hust/zhaozy.github.io/blob/gh-pages/images/boxplot.png)
 
-**从TCR-seq与RNA-seq的AUC曲线以及boxplot比较可以看出，TCR-seq的结果明显好于RNA-seq。TCR-seq AUC曲线值更接近于1，disease与control之间的cancer score P-value<<0.05,说明TCR-seq的方法disease与control之间存在明显差异。而RNA-seq的结果显示，disease与control的cancer score 的P-value=0.33>0.05,不能说明二者存在显著差异，综上所述，TCR-seq的测序的方法个在癌症诊断中表现的更好，通过cancer score 能将disease与control之间明显的区分出来。
+**从TCR-seq与RNA-seq的AUC曲线以及boxplot比较可以看出，TCR-seq的结果明显好于RNA-seq。TCR-seq AUC曲线值更接近于1，disease与control之间的cancer score P-value<<0.05,说明TCR-seq的方法disease与control之间存在明显差异。而RNA-seq的结果显示，disease与control的cancer score 的P-value=0.33>0.05,不能说明二者存在显著差异，综上所述，TCR-seq的测序的方法个在癌症诊断中表现的更好，通过cancer score 能将disease与control之间明显的区分出来。**
 
 ## 3）(dis)advantages of both sequencig methods
 ### 3.a）(dis)advantages of RNA-seq
@@ -33,6 +33,7 @@
 ### Running Steps
 进入TCR目录，激活TCR的conda 环境
 1. cp TCR_input data,divide the data into control and disease
+
 ```linux
 # enter the TCR dir
 cd TCR
@@ -52,6 +53,7 @@ ls |cut -c1-19|uniq > /home/zhaoyizi/TCR/02.rawdata_PBMC/diseaseID.txt
 ```
 
 2. make working directory tree
+
 ```linux
 # 确认路径在TCR目录下
 cd /home/zhaoyizi/TCR
@@ -60,6 +62,7 @@ mkdir -p ./rawdata_PBMC_RNA-seq/{01_TCRcalling_output,02_filter_output}/{disease
 ```
 
 3. TCR calling
+
 ```linux
 # 从双端测序PE的原始文件作为输入文件，从fastq(.gz)原始文件中得到TCR序列信息，使用 for loop循环执行
 for idx in `cat 02.rawdata_PBMC/controlID.txt`; 
@@ -71,5 +74,4 @@ do
 -t 4 
 -o ./rawdata_PBMC_RNA-seq/01_TCRcalling_output/${idx}; 
 done
-
 ```
