@@ -32,6 +32,7 @@
 
 ### Running Steps
 进入TCR目录，激活TCR的conda 环境
+
 1. cp TCR_input data,divide the data into control and disease
 
 ```linux
@@ -62,6 +63,7 @@ mkdir -p ./rawdata_PBMC_RNA-seq/{01_TCRcalling_output,02_filter_output}/{disease
 ```
 
 3. TCR calling
+
 ```linux
 # 从双端测序PE的原始文件作为输入文件，从fastq(.gz)原始文件中得到TCR序列信息，使用 for loop循环执行
 for idx in `cat 02.rawdata_PBMC/controlID.txt`; 
@@ -83,8 +85,6 @@ done
 for idx in `cat ./02.rawdata_PBMC/diseaseID.txt`; do Rscript ./filter_TRUST4.R ./rawdata_PBMC_RNA-seq/01_TCRcalling_output/disease ./rawdata_PBMC_RNA-seq/02_filter_output/disease ${idx}; done
 
  for idx in `cat ./02.rawdata_PBMC/controlID.txt`; do Rscript ./filter_TRUST4.R ./rawdata_PBMC_RNA-seq/01_TCRcalling_output/control ./rawdata_PBMC_RNA-seq/02_filter_output/control ${idx}; done
-
-
 ```
 
 5. predict cancer score using DeepCAT
