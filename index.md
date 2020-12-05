@@ -10,7 +10,7 @@
 
 ## 3）(dis)advantages of both sequencig methods
 ### 3.a）(dis)advantages of RNA-seq
-* RNA-seq 总文库中存在的TCR文库不是特别的多，因为RNA-seq是非靶向的测序。从刚刚的实际操作中可以看到，RNA-seq数据经过TCR calling 后得到的TCR序列量很少，甚至不足以进行cluster
+* RNA-seq 总文库中存在的TCR文库不是特别的多，因为RNA-seq是非靶向的测序。从刚刚的实际操作中可以看到，RNA-seq数据经过TCR calling 后得到的TCR序列量很少(264)，甚至不足以进行cluster,而TCR-seq经过filter后的数据高达1w。
 * RNA-seq 会做RNA片段化处理，TCR最大的特点是VDJ重组，被随机打断后，再进行RNA拼接时，可能会造成将不同的TCR的VDJ拼接起来从而导致数据的不准确。
 * RNA-seq样本大多取自肿瘤组织或癌旁组织。组织中的TCR含量本身没有PBMC中高，多样性也不如外周血。
 
