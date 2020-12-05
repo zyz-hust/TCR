@@ -33,7 +33,7 @@
 ### Running Steps
 进入TCR目录，激活TCR的conda 环境
 
-1. cp TCR_input data,divide the data into control and disease
+#### 4.1 cp TCR_input data,divide the data into control and disease
 
 ```linux
 # enter the TCR dir
@@ -53,7 +53,7 @@ cd /home/zhaoyizi/TCR/02.rawdata_PBMC/disease
 ls |cut -c1-19|uniq > /home/zhaoyizi/TCR/02.rawdata_PBMC/diseaseID.txt
 ```
 
-2. make working directory tree
+#### 4.2 make working directory tree
 
 ```linux
 # 确认路径在TCR目录下
@@ -62,7 +62,7 @@ mkdir -p ./rawdata_PBMC_RNA-seq/{01_TCRcalling_output,02_filter_output,03_deepca
 mkdir -p ./rawdata_PBMC_RNA-seq/{01_TCRcalling_output,02_filter_output}/{disease,control}
 ```
 
-3. TCR calling
+#### 4.3 TCR calling
 
 ```linux
 # 从双端测序PE的原始文件作为输入文件，从fastq(.gz)原始文件中得到TCR序列信息，使用 for loop循环执行
@@ -78,7 +78,7 @@ done
 
 ```
 
-4. filter/prepare input
+#### 4.4 filter/prepare input
 
 ```linux
 # for loop 分别过滤疾病和对照组所有样本
@@ -87,7 +87,7 @@ for idx in `cat ./02.rawdata_PBMC/diseaseID.txt`; do Rscript ./filter_TRUST4.R .
  for idx in `cat ./02.rawdata_PBMC/controlID.txt`; do Rscript ./filter_TRUST4.R ./rawdata_PBMC_RNA-seq/01_TCRcalling_output/control ./rawdata_PBMC_RNA-seq/02_filter_output/control ${idx}; done
 ```
 
-5. predict cancer score using DeepCAT
+#### 4.5 predict cancer score using DeepCAT
 
 ```linux
 # 末尾不要加/，加了/后输出文件名变为了Cancer_score_.txt
@@ -98,13 +98,13 @@ bash ./Script_DeepCAT.sh -t ./rawdata_PBMC_RNA-seq/02_filter_output/control
 mv ./Cancer_score_{control,disease}.txt ./rawdata_PBMC_RNA-seq/03_deepcat_output/
 ```
 
-6. visualize cancer score result
+#### 4.6 visualize cancer score result
 
 ```linux
 Rscript ./plot.R ./rawdata_PBMC_RNA-seq/03_deepcat_output
 ```
 
-### raw fastq input results
+### 5） raw fastq input results
 **做完后才发现，这批样本就是上述流程中RNA-seq经过TCR calling 后的数据，因此结果RNA-seq的结果相同**
 
 ![raw_data_auc](https://github.com/zyz-hust/zhaozy.github.io/blob/gh-pages/images/raw_data_auc.png)
