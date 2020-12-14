@@ -110,7 +110,5 @@ Rscript ./plot.R ./rawdata_PBMC_RNA-seq/03_deepcat_output
 ### 5） raw fastq input results
 **做完后才发现，这批样本就是上述流程中RNA-seq经过TCR calling 后的数据，因此结果RNA-seq的结果相同**
 
-![raw_data_auc](https://github.com/zyz-hust/zhaozy.github.io/blob/gh-pages/images/raw_data_auc.png)
-![raw_data_boxplot](https://github.com/zyz-hust/zhaozy.github.io/blob/gh-pages/images/raw_data_boxplot.png)
-
-
+![raw_data_auc](https://i.loli.net/2020/12/14/9GOMTiCLAQ1UXDV.png)
+![raw_data_boxplot](https://i.loli.net/2020/12/14/IdLvgsVT5niJ3cm.png)
