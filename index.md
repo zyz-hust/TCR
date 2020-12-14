@@ -1,5 +1,6 @@
 # TCR analysis
 ## 1）TCR-seq results
+![png](https://i.loli.net/2020/12/14/pla1GtT3efwo8Vk.png)
 ![TCR-seq-auc](https://github.com/zyz-hust/zhaozy.github.io/blob/gh-pages/images/TCR-seq_auc.png)
 ![TCR-seq boxplot](https://github.com/zyz-hust/zhaozy.github.io/blob/gh-pages/images/TCR-seq_boxplot.png)
 ## 2） RNA-seq results
