@@ -1,11 +1,13 @@
 # TCR analysis
 ## 1）TCR-seq results
-![png](https://i.loli.net/2020/12/14/pla1GtT3efwo8Vk.png)
-![TCR-seq-auc](https://github.com/zyz-hust/zhaozy.github.io/blob/gh-pages/images/TCR-seq_auc.png)
-![TCR-seq boxplot](https://github.com/zyz-hust/zhaozy.github.io/blob/gh-pages/images/TCR-seq_boxplot.png)
+
+![TCR-seq boxplot](https://i.loli.net/2020/12/14/pla1GtT3efwo8Vk.png)
+![TCR-seq AUC](https://i.loli.net/2020/12/14/EDunBASOsv9yMrb.png)
+
 ## 2） RNA-seq results
-![RNA-seq AUC](https://github.com/zyz-hust/zhaozy.github.io/blob/gh-pages/images/auc.png)
-![RNA-seq boxplot](https://github.com/zyz-hust/zhaozy.github.io/blob/gh-pages/images/boxplot.png)
+
+![RNA-seq AUC](https://i.loli.net/2020/12/14/9GOMTiCLAQ1UXDV.png)
+![RNA-seq boxplot](https://i.loli.net/2020/12/14/IdLvgsVT5niJ3cm.png)
 
 **从TCR-seq与RNA-seq的AUC曲线以及boxplot比较可以看出，TCR-seq的结果明显好于RNA-seq。TCR-seq AUC曲线值更接近于1，disease与control之间的cancer score P-value<<0.05,说明TCR-seq的方法disease与control之间存在明显差异。而RNA-seq的结果显示，disease与control的cancer score 的P-value=0.33>0.05,不能说明二者存在显著差异，综上所述，TCR-seq的测序的方法个在癌症诊断中表现的更好，通过cancer score 能将disease与control之间明显的区分出来。**
 
